@@ -1,9 +1,12 @@
 import Card from './shared/Card'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Button from './Button'
 import Rating from './Rating'
+import FeedBackContext from '../context/FeedBackContext'
 
-const FeedBackForm = ({addFeedback}) => {
+const FeedBackForm = () => {
+
+    const {addFeedback} = useContext(FeedBackContext)
 
     const [text,setText] = useState('')
     const [msg,setMsg] = useState('')

@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import FeedBackContext from "../context/FeedBackContext";
 
 
 const calculateAverage = (feed) => {
@@ -11,8 +13,8 @@ const calculateAverage = (feed) => {
     return finalAv.toFixed(1);
 };
 
-const FeedbackNumbers = ({feedback}) => {
-    console.log(feedback)
+const FeedbackNumbers = () => {
+    const {feedback} = useContext(FeedBackContext)
   return (
     <div className="feedback-stats">
         <h4>{ feedback.length === 1 ? 'Review: '+ feedback.length : feedback.length === 0 ? 'No reviews to show ' : 'Reviews: '+ feedback.length}</h4>
