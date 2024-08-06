@@ -1,7 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
+
 import Header from './components/Header';
-import FeedbackData from './data/FeedBackData';
+
 import FeedBackList from './components/FeedBackList';
 import FeedbackNumbers from './components/FeedbackNumbers';
 import FeedBackForm from './components/FeedBackForm';
@@ -11,11 +11,7 @@ import AboutIcon from './components/AboutIcon';
 import { FeedBackprovider } from './context/FeedBackContext';
 
 const App = () => {
-  const [Feedback, setFeedback] = useState(FeedbackData); 
-  
 
-
- 
 
   return (
     <FeedBackprovider>

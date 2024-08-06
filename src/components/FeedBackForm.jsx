@@ -1,12 +1,25 @@
 import Card from './shared/Card'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import Button from './Button'
 import Rating from './Rating'
 import FeedBackContext from '../context/FeedBackContext'
 
+
+
+
+
 const FeedBackForm = () => {
 
-    const {addFeedback} = useContext(FeedBackContext)
+    const { addFeedback, feedbackEdit } = useContext(FeedBackContext)
+
+    useEffect(()=>{ 
+            if(feedbackEdit.edit === true){
+                setText(feedbackEdit.item.text)
+                setRating(feedbackEdit.item.rating)
+                setDisabled(false)
+            }
+        }
+    ,[feedbackEdit])
 
     const [text,setText] = useState('')
     const [msg,setMsg] = useState('')
