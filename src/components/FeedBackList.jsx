@@ -6,10 +6,12 @@ import FeedBackContext from '../context/FeedBackContext'
 
 const FeedBackList = () => {
 
-    const {feedback} = useContext(FeedBackContext)
+    const {feedback,isLoading} = useContext(FeedBackContext)
     
   return (
    <>
+   { isLoading ? 'waiting test': 
+   
    <div className="feedback-list">
    
     
@@ -29,6 +31,7 @@ exit={{opacity:0}}
     
    
    </div>
+   }
    </>
   )
 }
