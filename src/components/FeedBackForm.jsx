@@ -10,7 +10,7 @@ import FeedBackContext from '../context/FeedBackContext'
 
 const FeedBackForm = () => {
 
-    const { addFeedback, feedbackEdit } = useContext(FeedBackContext)
+    const { addFeedback, feedbackEdit,updateFeedBack } = useContext(FeedBackContext)
 
     useEffect(()=>{ 
             if(feedbackEdit.edit === true){
@@ -44,7 +44,15 @@ const FeedBackForm = () => {
             text,
             rating
         }
-        addFeedback(newFeed)
+
+        if(feedbackEdit.edit === true){
+            updateFeedBack(feedbackEdit.item.id,newFeed)
+        }else
+        {
+            addFeedback(newFeed)
+        }
+       
+
     }
 
   return (
